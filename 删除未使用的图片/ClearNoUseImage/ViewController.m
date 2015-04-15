@@ -302,6 +302,12 @@
         }
         
         [_unusedImageNames removeObjectForKey:fileName];
+        [_unusedImageNames removeObjectForKey:[fileName stringByAppendingString:@"_up.png"]];
+        [_unusedImageNames removeObjectForKey:[fileName stringByAppendingString:@"_han.png"]];
+        for (int i=0; i<10; i++) {
+            [_unusedImageNames removeObjectForKey:[fileName stringByAppendingFormat:@"_%d.png",i]];
+            [_unusedImageNames removeObjectForKey:[fileName stringByAppendingFormat:@"%d.png",i]];
+        }
     }
 }
 
